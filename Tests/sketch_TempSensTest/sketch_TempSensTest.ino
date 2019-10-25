@@ -2,14 +2,14 @@
 #include <DallasTemperature.h>
 
 const int refreshWait = 2500;
-const int tempGoodIfBelow = 60;
-const int tempOkIfBelow = 80;
+const int tempGoodIfBelow = 40;
+const int tempOkIfBelow = 65;
 
 // GPIOs
 const int tempBus = 33;
 const int rgbRPin = 19;
 const int rgbGPin = 18;
-const int rgbBPin = 5;
+const int rgbBPin = 5; // Wird eigtl. nicht gebraucht
 
 // TempSensor Stuff
 OneWire oneWire(tempBus);
