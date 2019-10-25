@@ -1,4 +1,4 @@
-# Temperaturüberwachung mittels eines ESP32 und eines DS18B20 Temperatursensors
+# Temperaturüberwachung mittels ESP32 und eines DS18B20 Temperatursensors
 
 
 
