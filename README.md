@@ -3,4 +3,4 @@
 
 
 ## Pinbelegung
-![Esp32 Pinbelegung](https://images-na.ssl-images-amazon.com/images/I/71zUFw5K49L._AC_SL1001_.jpg "ESP32 PinBelegung")
+![Esp32 Pinbelegung](https://raw.githubusercontent.com/Shik3i/TuttasEsp32/master/PinOutEsp32.jpg "ESP32 PinBelegung")
