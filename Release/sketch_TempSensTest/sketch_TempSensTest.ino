@@ -11,6 +11,8 @@ const int rgbRPin = 19;
 const int rgbGPin = 18;
 const int rgbBPin = 5; // Wird eigtl. nicht gebraucht
 
+const int testWhite = 21; // Für Testzwecke
+
 // TempSensor Stuff
 OneWire oneWire(tempBus);
 DallasTemperature sensors(&oneWire);
@@ -22,6 +24,7 @@ void setup() {
   pinMode(rgbRPin, OUTPUT);
   pinMode(rgbGPin, OUTPUT);
   pinMode(rgbBPin, OUTPUT);  
+  pinMode(testWhite, OUTPUT);
 }
 
 void loop() {

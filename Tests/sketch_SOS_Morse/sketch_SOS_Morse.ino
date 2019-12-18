@@ -9,7 +9,7 @@
 void setup() {
   // put your setup code here, to run once:
   
-  pinMode(22, OUTPUT);  
+  pinMode(21, OUTPUT);  
 }
 
 void loop() {
@@ -29,15 +29,15 @@ void loop() {
 }
 
 void shortBeep(void) {
-  digitalWrite(22, HIGH);
+  digitalWrite(21, HIGH);
   delay(dotLength);
-  digitalWrite(22, LOW);
+  digitalWrite(21, LOW);
   delay(dotLength);
 }
 
 void longBeep(void) {
-  digitalWrite(22, HIGH);
+  digitalWrite(21, HIGH);
   delay(dashLength);
-  digitalWrite(22, LOW);
+  digitalWrite(21, LOW);
   delay(dashLength);
 }
