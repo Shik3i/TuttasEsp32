@@ -15,6 +15,7 @@ WiFiServer server(80);
 const int refreshWait = 1000;
 const int tempGoodIfBelow = 25;
 const int tempOkIfBelow = 26;
+int count = 0;
 
 // GPIOs
 const int tempBus = 33;
@@ -64,10 +65,12 @@ void loop() {
       Serial.println("New Client");
       clientS.println("HTTP/1.0 200 OK");
       clientS.println("Content-type:text/html\n");
-      clientS.println("<html><body bgcolor=\"#FFFF00\"><center><h1 style=\"font-size:160px;margin-bottom:-20;\">WORKS!</h1><h2 style=\"color:blue;\">Robin ist ein guter Klassensprecher!</h2></center></body></html>");
+      clientS.println("<html><body bgcolor=\"#FFFF00\"><center><h1 style=\"font-size:160px;margin-bottom:-20;\">WORKS!</h1><h2 style=\"color:0000FF;\">Robin ist ein guter Klassensprecher!</h2><img src=\"https://media.giphy.com/media/iVV3oxn0jOGis/giphy.gif\"></img></center></body></html>");
       clientS.flush();
       clientS.stop();
-      toggleWhite();
+      if (count++ % 2 == 0){
+       toggleWhite(); 
+      }
   }
 
   // Temp Shit  
