@@ -49,11 +49,6 @@ void setup() {
   // Wait for connection AND IP address from DHCP
   Serial.println();
   Serial.println("Waiting for connection and IP Address from DHCP");
-  while (WiFi.status() != WL_CONNECTED)
-  {
-      delay(2000);
-      Serial.print(".");
-  }
   Serial.println("");
   Serial.println("WiFi connected");
   Serial.println("IP address: ");
@@ -72,6 +67,7 @@ void loop() {
       clientS.println("<html><body bgcolor=\"#FFFF00\"><center><h1 style=\"font-size:160px;margin-bottom:-20;\">WORKS!</h1><h2 style=\"color:blue;\">Robin ist ein guter Klassensprecher!</h2></center></body></html>");
       clientS.flush();
       clientS.stop();
+      toggleWhite();
   }
 
   // Temp Shit  
@@ -113,4 +109,12 @@ void rgbReset(void){
   digitalWrite(rgbRPin, LOW);
   digitalWrite(rgbGPin, LOW);
   digitalWrite(rgbBPin, LOW);
+}
+
+void toggleWhite(void){
+  if (digitalRead(testWhite) == HIGH){
+    digitalWrite(testWhite, LOW);
+  } else {
+    digitalWrite(testWhite, HIGH);
+  }
 }
