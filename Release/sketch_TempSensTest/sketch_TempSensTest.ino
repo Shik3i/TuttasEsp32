@@ -58,21 +58,6 @@ void setup() {
 }
 
 void loop() {
-  // WiFi Shit
-  WiFiClient clientS = server.available();
-  if (clientS)
-  {
-      Serial.println("New Client");
-      clientS.println("HTTP/1.0 200 OK");
-      clientS.println("Content-type:text/html\n");
-      clientS.println("<html><body bgcolor=\"#FFFF00\"><center><h1 style=\"font-size:160px;margin-bottom:-20;\">WORKS!</h1><h2 style=\"color:0000FF;\">Robin ist ein guter Klassensprecher!</h2><img src=\"https://media.giphy.com/media/iVV3oxn0jOGis/giphy.gif\"></img></center></body></html>");
-      clientS.flush();
-      clientS.stop();
-      if (count++ % 2 == 0){
-       toggleWhite(); 
-      }
-  }
-
   // Temp Shit  
   sensors.requestTemperatures(); 
   float temperatureC = sensors.getTempCByIndex(0);
@@ -80,9 +65,23 @@ void loop() {
   Serial.println("ºC");
   displayTemp(temperatureC);
 
+  // WiFi Shit
+  WiFiClient clientS = server.available();
+  if (clientS)
+  {
+      Serial.println("New Client");
+      clientS.println("HTTP/1.0 200 OK");
+      clientS.println("Content-type:text/html\n");
+      clientS.println("<html><head><meta charset="utf-8"></head><body bgcolor=\"#FFFF00\"><center><h1 style=\"font-size:160px;margin-bottom:-20;\">WORKS!</h1><h2 style=\"color:0000FF;\">Robin ist ein guter Klassensprecher!\nWir haben angenehme " + String(temperatureC) + " °C\n</h2><img src=\"https://media.giphy.com/media/iVV3oxn0jOGis/giphy.gif\"></img></center></body></html>");
+      clientS.flush();
+      clientS.stop();
+      if (count++ % 2 == 0){
+       toggleWhite(); 
+      }
+  }
+
   delay(refreshWait);
 }
-
 
 void displayTemp(float temp){
   rgbReset();
